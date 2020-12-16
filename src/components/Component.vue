@@ -1,8 +1,12 @@
 <template>
   <div>
-    {{ message }}
-    <div>{{ message2 }}</div>
-    <button class="btn btn-primary" type="button">Bootstrap button test</button>
+    <ul>
+      <li>{{ message }} displayed by Component</li>
+      <li v-if="false">{{ message2 }}</li>
+      <li>
+        <button class="btn btn-primary" type="button">Bootstrap button test</button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -13,6 +17,12 @@ import { Prop, Vue, Component } from 'vue-property-decorator';
 export default class ArturComponent extends Vue {
   @Prop() private message!: string;
 
-  message2 = 'This is declared in the class';
+  message2 = 'Placeholdr for the message';
 }
 </script>
+
+<style>
+ul {
+  list-style-type: none;
+}
+</style>

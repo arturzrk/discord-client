@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="discord-client">
+    <h1>This discord client page</h1>
     <h1><ArturAbout message="With Message Passed as a Property"/></h1>
   </div>
 </template>
@@ -14,5 +14,5 @@ import ArturAbout from '@/components/Component.vue';
     ArturAbout,
   },
 })
-export default class About extends Vue {}
+export default class DiscordClient extends Vue {}
 </script>
