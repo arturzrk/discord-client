@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/discord-client">Discord Client</router-link>
+      <router-link to="/employees">Employees View</router-link>
     </div>
     <router-view/>
   </div>
