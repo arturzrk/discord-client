@@ -1,5 +1,4 @@
 import { injectable } from 'inversify-props';
-import 'reflect-metadata';
 import ITitleProvider from '../abstractions/ITitleProvider';
 
 @injectable()

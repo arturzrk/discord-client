@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{titleProvider.GetTitle()}}</h1>
+    <h1>{{second_Title.GetTitle()}}</h1>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -25,11 +25,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Inject } from 'inversify-props';
+import { inject } from 'inversify-props';
 import ITitleProvider from '@/services/abstractions/ITitleProvider';
 import { Person } from '@/data/models/Person';
-import { Employees } from '@/data/Employees';
 import CustomComponentClass from '@/components/CustomComponent.vue';
+import IPersonArray from '@/services/abstractions/IPersonArray';
 
 @Component({
   components: {
@@ -37,17 +37,15 @@ import CustomComponentClass from '@/components/CustomComponent.vue';
   },
 })
 export default class EmployeesView extends Vue {
-  @Inject()
-  private titleProvider!: ITitleProvider;
+  @inject('ITitleProvider') private second_Title!: ITitleProvider;
+
+  @inject('IPersonArray') private personArray!: IPersonArray;
 
   private people: Person[];
 
-  private stringVal: string;
-
   constructor() {
     super();
-    this.stringVal = 'Initial value';
-    this.people = Employees;
+    this.people = this.personArray.GetPersonArray();
   }
 }
 </script>
