@@ -4,7 +4,7 @@ const Employees: Person[] = [
   {
     PersonId: 1,
     FirstName: 'Artur',
-    SurName: 'Zurek',
+    SurName: 'Zurekis',
     Handle: 'email',
   },
   {
