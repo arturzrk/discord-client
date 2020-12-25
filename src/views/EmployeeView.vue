@@ -29,7 +29,7 @@ import { inject } from 'inversify-props';
 import ITitleProvider from '@/services/abstractions/ITitleProvider';
 import { Person } from '@/data/models/Person';
 import CustomComponentClass from '@/components/CustomComponent.vue';
-import IPersonArray from '@/services/abstractions/IPersonArray';
+import { IPersonArray } from '@/services/abstractions/IPersonArray';
 
 @Component({
   components: {

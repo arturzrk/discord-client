@@ -1,5 +1,8 @@
 import { Person } from '@/data/models/Person';
 
-export default interface IPersonArray {
+interface IPersonArray {
     GetPersonArray(): Person[];
 }
+
+// eslint-disable-next-line import/prefer-default-export
+export { IPersonArray };
