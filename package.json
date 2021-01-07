@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.21.0",
     "core-js": "^3.6.5",
+    "discord.js": "^12.5.1",
     "inversify-props": "^2.2.6",
     "reflect-metadata": "^0.1.13",
     "vue": "^2.6.11",
