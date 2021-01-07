@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>{{second_Title.GetTitle()}}</h1>
+    <h1 id="title">{{secondTitle.GetTitle()}}</h1>
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="p in people" :key="p.PersonId">
+        <tr :id="`employee-${p.PersonId}`" v-for="p in people" :key="p.PersonId">
           <td>{{p.PersonId}}</td>
           <td>{{p.FirstName}}</td>
           <td>{{p.SurName}}</td>
@@ -29,7 +29,8 @@ import { inject } from 'inversify-props';
 import ITitleProvider from '@/services/abstractions/ITitleProvider';
 import { Person } from '@/data/models/Person';
 import CustomComponentClass from '@/components/CustomComponent.vue';
-import { IPersonArray } from '@/services/abstractions/IPersonArray';
+import IPersonArray from '@/services/abstractions/IPersonArray';
+import { TYPES } from '@/types';
 
 @Component({
   components: {
@@ -37,9 +38,9 @@ import { IPersonArray } from '@/services/abstractions/IPersonArray';
   },
 })
 export default class EmployeesView extends Vue {
-  @inject('ITitleProvider') private second_Title!: ITitleProvider;
+  @inject(TYPES.ITitleProvider) private secondTitle!: ITitleProvider;
 
-  @inject('IPersonArray') private personArray!: IPersonArray;
+  @inject(TYPES.IPersonArray) private personArray!: IPersonArray;
 
   private people: Person[];
 
